@@ -1,14 +1,12 @@
 import React from 'react';
-import App from '../App';
 import Nyhetsartikel from './Nyhetsartikel';
 
-function Nyhetslista() {
-    return (
-        <section>
-            <Nyhetsartikel />
-            <Nyhetsartikel />
-            <Nyhetsartikel />
-            <Nyhetsartikel />
+function Nyhetslista(props) {
+    return ( <section>
+          {props.minaArtiklar.map( function (item, index){
+             return <Nyhetsartikel minArtikel =  {item} 
+             key = {`artikel${index}`}/>  
+          })}
         </section>);
 }
 
